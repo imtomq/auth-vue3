@@ -7,6 +7,9 @@
 </template>
 <script>
 export default {
-  name: "MyName",
+  name: 'MyName',
+  created() {
+    console.log(process.env);
+  },
 };
 </script>
