@@ -34,5 +34,7 @@ FOO=bar
 VUE_APP_NOT_SECRET_CODE=some_value
 ```
 
+You can also refer `.env`, `.env.development` and `.env.production` files in my project.
+
 > Do not store any secrets (such as API private key) in your app!. <br />
 > Environment Variables are embedded into the build, meaning anyone can view them by inspecting your app's files.
