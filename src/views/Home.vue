@@ -1,8 +1,8 @@
 <template>
-  <h1>Home Page 1</h1>
+  <h1>Home Page</h1>
 </template>
 <script>
 export default {
-  name: "MyHome",
+  name: 'MyHome',
 };
 </script>

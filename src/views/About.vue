@@ -1,8 +1,8 @@
 <template>
-  <h1>About Page 1</h1>
+  <h1>About Page</h1>
 </template>
 <script>
 export default {
-  name: "MyAbout",
+  name: 'MyAbout',
 };
 </script>
