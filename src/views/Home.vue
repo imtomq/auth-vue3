@@ -1,8 +1,10 @@
 <template>
-  <h1>Home Page</h1>
+  <about />
 </template>
 <script>
+import About from 'views/About.vue';
 export default {
   name: 'MyHome',
+  components: { About },
 };
 </script>

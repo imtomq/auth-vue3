@@ -1,19 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
+    // Let's you can set a base directory to resolve non-absolute modules name.
+    // You can define a root folder where you can do absolute file
     "baseUrl": "./",
-    "moduleResolution": "node",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
-  }
+      "views/*": ["src/views/*"],
+      "router/*": ["./src/router/*"],
+      "components": ["./src/components/*"],
+      "layouts": ["./src/layouts/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

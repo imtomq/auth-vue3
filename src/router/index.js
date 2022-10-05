@@ -6,6 +6,8 @@ import News from '../views/News.vue';
 import NotFound from '../views/NotFound.vue';
 import Forbidden from '../views/Forbidden.vue';
 
+import Login from '../views/Login.vue';
+
 const SUB_PATH = process.env.NODE_ENV === 'production' ? '/' : 'development';
 
 const routes = [
@@ -31,6 +33,14 @@ const routes = [
     component: News,
     meta: {
       requiresAuth: true,
+    },
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+    meta: {
+      requiresAuth: false,
     },
   },
   {
