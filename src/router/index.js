@@ -67,7 +67,6 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-  console.log('to: ', to, 'from: ', from);
   if (to.meta.requiresAuth) next('/403');
   else next();
 });
