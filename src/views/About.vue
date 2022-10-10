@@ -1,12 +1,13 @@
 <script>
-import { reactive, nextTick, ref } from 'vue';
-import { useMouse } from '@/views/mouse.js';
+cls
+import { reactive, nextTick, ref } from "vue";
+import { useMouse } from "@/views/mouse.js";
 export default {
-  name: 'MyAbout',
+  name: "MyAbout",
   props: {
     title: {
       type: String,
-      default: 'About Page',
+      default: "About Page",
     },
   },
   setup() {
@@ -19,8 +20,8 @@ export default {
       count.value++;
       state.show = !state.show;
       nextTick(() => {
-        const el = document.getElementById('title');
-        el.style.color = 'red';
+        const el = document.getElementById("title");
+        el.style.color = "red";
       });
     }
 
@@ -38,7 +39,7 @@ export default {
   <div class="bg-slate-300">
     <h1 id="title">{{ title }}</h1>
     <slot />
-    <Transition :duration="550">
+    <Transition name="bounce">
       <div v-if="state.show" class="bg-slate-600">
         <slot name="test" />
       </div>

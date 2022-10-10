@@ -1,2 +1,3 @@
 https://vuejs.org/guide/essentials/component-basics.html#dynamic-components
 https://vuejs.org/guide/built-ins/transition.html#javascript-hooks
+https://vuejs.org/guide/built-ins/keep-alive.html
