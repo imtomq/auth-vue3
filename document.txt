@@ -1,3 +1,5 @@
 https://vuejs.org/guide/essentials/component-basics.html#dynamic-components
 https://vuejs.org/guide/built-ins/transition.html#javascript-hooks
 https://vuejs.org/guide/built-ins/keep-alive.html
+https://router.vuejs.org/guide/advanced/composition-api.html#accessing-the-router-and-current-route-inside-setup
+https://router.vuejs.org/guide/advanced/lazy-loading.html#with-vite

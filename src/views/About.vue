@@ -1,27 +1,42 @@
 <script>
-cls
-import { reactive, nextTick, ref } from "vue";
-import { useMouse } from "@/views/mouse.js";
+import { reactive, nextTick, ref, watch } from 'vue';
+import { useMouse } from '@/views/mouse.js';
+import { useRoute } from 'vue-router';
+
 export default {
-  name: "MyAbout",
+  name: 'MyAbout',
   props: {
     title: {
       type: String,
-      default: "About Page",
+      default: 'About Page',
     },
   },
   setup() {
-    const state = reactive({ count: 0, show: true });
+    const state = reactive({ count: 0, show: true, loading: true });
     const count = ref(0);
     const { x, y } = useMouse();
+
+    watch(
+      () => useRoute.params,
+      () => {
+        fetchData();
+      },
+      { immediate: true }
+    );
+
+    function fetchData() {
+      setTimeout(() => {
+        state.loading = false;
+      }, 1000);
+    }
 
     async function increament() {
       state.count++;
       count.value++;
       state.show = !state.show;
       nextTick(() => {
-        const el = document.getElementById("title");
-        el.style.color = "red";
+        const el = document.getElementById('title');
+        el.style.color = 'red';
       });
     }
 
@@ -36,7 +51,8 @@ export default {
 </script>
 
 <template>
-  <div class="bg-slate-300">
+  <div v-if="state.loading">LOADING</div>
+  <div v-else class="bg-slate-300">
     <h1 id="title">{{ title }}</h1>
     <slot />
     <Transition name="bounce">

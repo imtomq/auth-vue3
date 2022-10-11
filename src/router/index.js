@@ -1,12 +1,13 @@
 import { createWebHistory, createRouter } from 'vue-router';
-import Home from '../views/Home.vue';
-import About from '../views/About.vue';
-import News from '../views/News.vue';
 
-import NotFound from '../views/NotFound.vue';
-import Forbidden from '../views/Forbidden.vue';
+const Home = () => import('@/views/Home.vue');
+const About = () => import('@/views/About.vue');
+const News = () => import('@/views/News.vue');
 
-import Login from '../views/Login.vue';
+const NotFound = () => import('@/views/NotFound.vue');
+const Forbidden = () => import('@/views/Forbidden.vue');
+
+const Login = () => import('@/views/Login.vue');
 
 const SUB_PATH = process.env.NODE_ENV === 'production' ? '/' : 'development';
 
@@ -23,6 +24,7 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About,
+    children: [{ path: ':id', component: About }],
     meta: {
       requiresAuth: false,
     },
