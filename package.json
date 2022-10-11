@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "json-server": "json-server --w --H 198.1.1.1 --p 3009 ./db/db.json"
+    "json-server": "json-server --w --p 3002 ./db/db.json"
   },
   "dependencies": {
     "core-js": "^3.8.3",

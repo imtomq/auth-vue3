@@ -24,7 +24,7 @@ export default {
       { immediate: true }
     );
 
-    function fetchData() {
+    async function fetchData() {
       setTimeout(() => {
         state.loading = false;
       }, 1000);
