@@ -1,15 +1,17 @@
 import { createApp } from 'vue';
 
-import router from './router';
-import './main.css';
-
 import App from './App.vue';
 import QButton from '@/components/QButton.vue';
+
+import './main.css';
+import router from './router';
+import { plugin } from '@/services/http.js';
 
 const app = createApp(App);
 
 app.use(router);
-app.component('q-button', QButton);
-app.mount('#app');
+app.use(plugin);
 
-// createApp(App).use(router).mount('#app');
+app.component('q-button', QButton);
+
+app.mount('#app');
