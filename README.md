@@ -1,27 +1,28 @@
 Working...
 
-  <!-- +--------+                                           +---------------+ -->
-  <!-- |        |--(A)------- Authorization Grant --------->|               | -->
-  <!-- |        |                                           |               | -->
-  <!-- |        |<-(B)----------- Access Token -------------|               | -->
-  <!-- |        |               & Refresh Token             |               | -->
-  <!-- |        |                                           |               | -->
-  <!-- |        |                            +----------+   |               | -->
-  <!-- |        |--(C)---- Access Token ---->|          |   |               | -->
-  <!-- |        |                            |          |   |               | -->
-  <!-- |        |<-(D)- Protected Resource --| Resource |   | Authorization | -->
-  <!-- | Client |                            |  Server  |   |     Server    | -->
-  <!-- |        |--(E)---- Access Token ---->|          |   |               | -->
-  <!-- |        |                            |          |   |               | -->
-  <!-- |        |<-(F)- Invalid Token Error -|          |   |               | -->
-  <!-- |        |                            +----------+   |               | -->
-  <!-- |        |                                           |               | -->
-  <!-- |        |--(G)----------- Refresh Token ----------->|               | -->
-  <!-- |        |                                           |               | -->
-  <!-- |        |<-(H)----------- Access Token -------------|               | -->
-  <!-- +--------+           & Optional Refresh Token        +---------------+ -->
+```
+  +--------+                                           +---------------+
+  |        |--(A)------- Authorization Grant --------->|               |
+  |        |                                           |               |
+  |        |<-(B)----------- Access Token -------------|               |
+  |        |               & Refresh Token             |               |
+  |        |                                           |               |
+  |        |                            +----------+   |               |
+  |        |--(C)---- Access Token ---->|          |   |               |
+  |        |                            |          |   |               |
+  |        |<-(D)- Protected Resource --| Resource |   | Authorization |
+  | Client |                            |  Server  |   |     Server    |
+  |        |--(E)---- Access Token ---->|          |   |               |
+  |        |                            |          |   |               |
+  |        |<-(F)- Invalid Token Error -|          |   |               |
+  |        |                            +----------+   |               |
+  |        |                                           |               |
+  |        |--(G)----------- Refresh Token ----------->|               |
+  |        |                                           |               |
+  |        |<-(H)----------- Access Token -------------|               |
+  +--------+           & Optional Refresh Token        +---------------+
 
-                      Refreshing an Expired Access Token
+```
 
 The flow illustrated in that above includes the following steps:
 
