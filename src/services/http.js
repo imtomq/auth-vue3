@@ -7,7 +7,7 @@ const injectionKey = Symbol('$http');
 
 export const useHttp = () => inject(injectionKey);
 
-export const plugin = {
+export const httpPlugin = {
   install(app) {
     const instance = axios.create({
       baseURL,

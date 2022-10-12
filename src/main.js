@@ -1,16 +1,19 @@
 import { createApp } from 'vue';
+import { createPinia } from 'pinia'
 
 import App from './App.vue';
 import QButton from '@/components/QButton.vue';
 
 import './main.css';
 import router from './router';
-import { plugin } from '@/services/http.js';
+import { httpPlugin } from '@/services/http.js';
 
 const app = createApp(App);
+const pinia = createPinia()
 
+app.use(pinia)
 app.use(router);
-app.use(plugin);
+app.use(httpPlugin);
 
 app.component('q-button', QButton);
 
