@@ -1,13 +1,12 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
-import { useHttp } from '@/services/http.js';
+import { $http } from '@/services/http.js';
+import router from '@/router/index.js';
 
 export const useAuthStore = defineStore('authStore', () => {
   const user = ref({});
   const loading = ref(false);
   const isLoggedIn = ref(false);
-
-  const $http = useHttp();
 
   async function login() {
     loading.value = true;
@@ -17,6 +16,7 @@ export const useAuthStore = defineStore('authStore', () => {
       isLoggedIn.value = true;
       user.value = response.data.user;
       localStorage.setItem('access-token', response.data['access-token']);
+      router.push({ name: 'Home' });
     }
     loading.value = false;
   }
@@ -25,5 +25,6 @@ export const useAuthStore = defineStore('authStore', () => {
     user,
     loading,
     login,
+    isLoggedIn,
   };
 });
