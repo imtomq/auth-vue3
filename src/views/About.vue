@@ -2,6 +2,7 @@
 import { reactive, nextTick, ref, watch } from 'vue';
 import { useMouse } from '@/views/mouse.js';
 import { useRoute } from 'vue-router';
+import { useExampleStore } from '@/stores/example.js';
 
 export default {
   name: 'MyAbout',
@@ -15,6 +16,8 @@ export default {
     const state = reactive({ count: 0, show: true, loading: true });
     const count = ref(0);
     const { x, y } = useMouse();
+
+    const counter = useExampleStore();
 
     watch(
       () => useRoute.params,
@@ -34,6 +37,8 @@ export default {
       state.count++;
       count.value++;
       state.show = !state.show;
+      // counter.increment();
+      counter.$patch({ count: counter.count + 2 });
       nextTick(() => {
         const el = document.getElementById('title');
         el.style.color = 'red';
@@ -45,6 +50,7 @@ export default {
       increament,
       x,
       y,
+      counter,
     };
   },
 };
@@ -54,6 +60,7 @@ export default {
   <div v-if="state.loading">LOADING</div>
   <div v-else class="bg-slate-300">
     <h1 id="title">{{ title }}</h1>
+    <h1 id="title">{{ counter.count }}</h1>
     <slot />
     <Transition name="bounce">
       <div v-if="state.show" class="bg-slate-600">
