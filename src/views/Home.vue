@@ -1,5 +1,4 @@
 <template>
-  Home
   <about>
     Slot's about page
     <template v-slot:test> slot has name atribute</template>
@@ -7,9 +6,9 @@
 </template>
 
 <script>
-import About from '@/views/About.vue';
+import About from "@/views/About.vue";
 export default {
-  name: 'MyHome',
+  name: "MyHome",
   components: { About },
 };
 </script>

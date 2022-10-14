@@ -3,9 +3,9 @@
   <menu />
 </template>
 <script>
-import Menu from 'Menu';
+import Menu from "Menu";
 export default {
-  name: 'Navigation',
+  name: "NavigationLayout",
   components: { Menu },
 };
 </script>

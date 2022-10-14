@@ -2,5 +2,9 @@
   "login": {
     "user": { "username": "Quyen Nguyen", "email": "quyennguyen@gmail.com" },
     "access-token": "ok"
+  },
+  "user": {
+    "username": "Quyen Nguyen",
+    "email": "quyennguyen@gmail.com"
   }
 }

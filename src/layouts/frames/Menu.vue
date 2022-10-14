@@ -3,6 +3,6 @@
 </template>
 <script>
 export default {
-  name: 'Menu',
+  name: "MenuLayout",
 };
 </script>
