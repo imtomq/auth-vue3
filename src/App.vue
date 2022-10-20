@@ -14,6 +14,8 @@ export default {
   setup() {
     // const $http = useHttp();
     async function fetchData() {
+      const a = '';
+      console.log(a)
       // const response = await $http.get('/posts/');
       // console.log(response);
     }
